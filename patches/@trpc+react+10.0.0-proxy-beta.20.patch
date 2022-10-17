@@ -1,0 +1,26 @@
+diff --git a/node_modules/@trpc/react/dist/createHooksInternal-0f5378f1.js b/node_modules/@trpc/react/dist/createHooksInternal-0f5378f1.js
+index 884280d..65acf6d 100644
+--- a/node_modules/@trpc/react/dist/createHooksInternal-0f5378f1.js
++++ b/node_modules/@trpc/react/dist/createHooksInternal-0f5378f1.js
+@@ -128,7 +128,7 @@ function getClientArgs(pathAndInput, opts) {
+  * @internal
+  */ function createHooksInternal(config) {
+     const mutationSuccessOverride = config?.unstable_overrides?.useMutation?.onSuccess ?? ((options)=>options.originalFn());
+-    const Context = TRPCContext;
++    const Context = React.createContext();
+     const createClient = (opts)=>{
+         return client.createTRPCClient(opts);
+     };
+diff --git a/node_modules/@trpc/react/dist/createHooksInternal-5ecdf622.mjs b/node_modules/@trpc/react/dist/createHooksInternal-5ecdf622.mjs
+index 7e7e83d..ecb7ed8 100644
+--- a/node_modules/@trpc/react/dist/createHooksInternal-5ecdf622.mjs
++++ b/node_modules/@trpc/react/dist/createHooksInternal-5ecdf622.mjs
+@@ -122,7 +122,7 @@ function getClientArgs(pathAndInput, opts) {
+  * @internal
+  */ function createHooksInternal(config) {
+     const mutationSuccessOverride = config?.unstable_overrides?.useMutation?.onSuccess ?? ((options)=>options.originalFn());
+-    const Context = TRPCContext;
++    const Context = React.createContext();
+     const createClient = (opts)=>{
+         return createTRPCClient(opts);
+     };
