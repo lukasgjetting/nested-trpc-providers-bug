@@ -7,11 +7,11 @@ const outerTrpc = initTRPC.context().create();
 const innerTrpc = initTRPC.context().create();
 
 const outerRouter = outerTrpc.router({
-  hello: outerTrpc.procedure.query(() => 'world'),
+  helloOuter: outerTrpc.procedure.query(() => 'Hello outer!'),
 });
 
 const innerRouter = innerTrpc.router({
-  hello: innerTrpc.procedure.query(() => 'bug'),
+  helloInner: innerTrpc.procedure.query(() => 'Hello inner!'),
 });
 
 export type OuterRouter = typeof outerRouter;

@@ -14,7 +14,7 @@ export const outerTrpc = createTRPCReact<OuterRouter>();
 export const innerTrpc = createTRPCReact<InnerRouter>();
 
 const outerTrpcClient = outerTrpc.createClient({ links: [httpLink({ url: 'http://localhost:4000/outer' })] });
-const innerTrpcClient = outerTrpc.createClient({ links: [httpLink({ url: 'http://localhost:4000/inner' })] });
+const innerTrpcClient = innerTrpc.createClient({ links: [httpLink({ url: 'http://localhost:4000/inner' })] });
 
 const outerQueryClient = new QueryClient();
 const innerQueryClient = new QueryClient();
